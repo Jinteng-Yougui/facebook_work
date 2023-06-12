@@ -1,6 +1,6 @@
-class CreateFeeds < ActiveRecord::Migration[6.1]
+class CreatePictures < ActiveRecord::Migration[6.1]
   def change
-    create_table :feeds do |t|
+    create_table :pictures do |t|
       t.text :image
       t.string :title
       t.text :content

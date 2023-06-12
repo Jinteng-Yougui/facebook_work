@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
-  get 'rails/g'
-  get 'rails/controller'
-  get 'rails/pictures'
   resources :feeds
+  resources :sessions, only: [:new, :create, :destroy]
+  resources :users, only: [:new, :create, :show]
+  resources :blogs do
+    collection do
+      post :confirm
+    end
+  end
 end
