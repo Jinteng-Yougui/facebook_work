@@ -1,0 +1,24 @@
+<h1>投稿一覧</h1>
+
+<table>
+  <tr>
+    <th>投稿者名</th>
+    <th>タイトル</th>
+    <th>画像</th>
+    <th>内容</th>
+  </tr>
+
+  <% @pictures.each do|picture| %>
+  <tr>
+    <td><%= picture.user.name %></td>
+    <td><%= picture.title %></td>
+    <td><%= picture.image %></td>
+    <td><%= picture.content %></td>
+    <td><%= link_to '内容を確認する', picture_path(picture.id) %></td>
+    <td><%= link_to "内容を編集する", edit_picture_path(picture.id) %></td>
+    <td><%= link_to "内容を削除する", picture_path(picture.id), method: :delete, data: {confirm: '本当に削除しても良いですか？'} %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to "新規作成", new_picture_path %>
