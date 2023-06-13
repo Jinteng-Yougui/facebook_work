@@ -15,5 +15,8 @@
   "devDependencies": {
     "webpack-dev-server": "^3",
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
+  },
+  "engins": {
+    "node": "16.x"
   }
 }
